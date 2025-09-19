@@ -1,0 +1,28 @@
+name: Build Jekyll site
+
+on:
+  push:
+    paths:
+      - 'docs/**'
+  pull_request:
+    paths:
+      - 'docs/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+      - name: Install dependencies
+        working-directory: docs
+        run: |
+          gem install bundler
+          bundle config set --local deployment 'true' || true
+          bundle install
+      - name: Build site
+        working-directory: docs
+        run: bundle exec jekyll build

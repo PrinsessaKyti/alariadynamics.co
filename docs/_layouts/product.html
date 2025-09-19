@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<article class="product">
+  <h1>{{ page.title }}</h1>
+  <p class="meta">Role: {{ page.role }} | Status: {{ page.status }}</p>
+
+  {% if page.images %}
+  <div class="gallery">
+    {% for img in page.images %}
+      <img src="{{ img }}" alt="{{ page.title }} image">
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <section class="overview">
+    {{ content }}
+  </section>
+
+  <section class="specs">
+    <h2>Key Specifications</h2>
+    <table>
+      <tbody>
+        {% if page.unit_cost %}<tr><th>Unit cost</th><td>{{ page.unit_cost }}</td></tr>{% endif %}
+        {% if page.operators %}<tr><th>Operators</th><td>{{ page.operators | join: ", " }}</td></tr>{% endif %}
+        {% if page.export_control %}<tr><th>Export control</th><td>{{ page.export_control }}</td></tr>{% endif %}
+      </tbody>
+    </table>
+  </section>
+
+  {% if page.brochure %}
+  <p><a href="{{ page.brochure }}" class="btn">Download brochure</a></p>
+  {% endif %}
+</article>

@@ -1,0 +1,21 @@
+title: Alaria Dynamics
+email: info@alariadynamics.co
+description: "Advanced aerospace & defense systems — Alaria Dynamics"
+baseurl: ""
+url: "https://alariadynamics.github.io"
+theme: minima
+plugins:
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+
+collections:
+  products:
+    output: true
+
+permalink: pretty
