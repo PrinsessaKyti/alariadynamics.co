@@ -1,8 +1,11 @@
 title: Alaria Dynamics
 email: info@alariadynamics.co
 description: "Advanced aerospace & defense systems — Alaria Dynamics"
-baseurl: ""
-url: "https://alariadynamics.github.io"
+# When GitHub Pages serves your site under a project page like
+# https://prinsessakyti.github.io/alariadynamics.co/ set `url` to your
+# user pages host and `baseurl` to the repository name.
+baseurl: "/alariadynamics.co"
+url: "https://prinsessakyti.github.io"
 theme: minima
 plugins:
   - jekyll-feed

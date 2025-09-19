@@ -9,7 +9,7 @@ layout: default
   {% if page.images %}
   <div class="gallery">
     {% for img in page.images %}
-      <img src="{{ img }}" alt="{{ page.title }} image">
+      <img src="{{ site.baseurl }}{{ img }}" alt="{{ page.title }} image">
     {% endfor %}
   </div>
   {% endif %}
@@ -30,6 +30,6 @@ layout: default
   </section>
 
   {% if page.brochure %}
-  <p><a href="{{ page.brochure }}" class="btn">Download brochure</a></p>
+  <p><a href="{{ site.baseurl }}{{ page.brochure }}" class="btn">Download brochure</a></p>
   {% endif %}
 </article>
