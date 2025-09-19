@@ -1,0 +1,14 @@
+title: Alaria Dynamics
+email: info@alariadynamics.co
+description: "Advanced aerospace & defense systems — Alaria Dynamics"
+baseurl: "/alariadynamics.co"
+url: "https://prinsessakyti.github.io"
+theme: minima
+plugins:
+  - jekyll-feed
+
+collections:
+  products:
+    output: true
+
+permalink: pretty
