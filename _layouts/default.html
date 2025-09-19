@@ -3,26 +3,57 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#001f2e">
     <title>{{ page.title | default: site.title }}</title>
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/site.css">
   </head>
-  <body>
+  <body class="theme-dark">
     <header class="site-header">
-      <div class="container">
+      <div class="container header-inner">
         <a class="brand" href="{{ site.baseurl }}/">
-          <img src="{{ site.baseurl }}/assets/img/logo.svg" alt="Alaria Dynamics" height="48">
+          <img src="{{ site.baseurl }}/assets/img/logo.svg" alt="Alaria Dynamics" height="40">
         </a>
-        {% include nav.html %}
+        <nav class="header-nav">
+          {% include nav.html %}
+        </nav>
+        <div class="header-actions">
+          <a class="btn ghost" href="{{ site.baseurl }}/contact/">Contact</a>
+        </div>
       </div>
     </header>
 
-    <main class="container">
-      {{ content }}
+    <main>
+      <section class="site-hero">
+        <div class="container hero-inner">
+          {% if page.title == "Home" %}
+            <h1 class="hero-title">{{ site.title }}</h1>
+            <p class="hero-lead">Designing advanced aerospace & defense systems for the next generation.</p>
+            <p><a class="btn primary" href="{{ site.baseurl }}/products/">Explore products</a></p>
+          {% else %}
+            <div class="page-header">
+              <h1>{{ page.title }}</h1>
+            </div>
+          {% endif %}
+        </div>
+      </section>
+
+      <div class="container site-content">
+        {{ content }}
+      </div>
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <p>&copy; {{ site.time | date: "%Y" }} Alaria Dynamics. All rights reserved.</p>
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="{{ site.baseurl }}/assets/img/logo.svg" alt="Alaria Dynamics" height="28">
+        </div>
+        <div class="footer-links">
+          <a href="{{ site.baseurl }}/about/">About</a>
+          <a href="{{ site.baseurl }}/products/">Products</a>
+          <a href="{{ site.baseurl }}/media/">Media</a>
+          <a href="{{ site.baseurl }}/careers/">Careers</a>
+        </div>
+        <div class="footer-copy">&copy; {{ site.time | date: "%Y" }} Alaria Dynamics</div>
       </div>
     </footer>
   </body>
